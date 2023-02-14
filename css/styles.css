@@ -40,6 +40,11 @@ input {
   width: 100%;
 }
 
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
 .bg-color {
   background-color: #562b81;
   color: white;
