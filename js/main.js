@@ -2,6 +2,7 @@ var $image = document.querySelector('img');
 var $imageInput = document.querySelector('#photo-url');
 var $title = document.querySelector('#title');
 var $notes = document.querySelector('#notes');
+var $ul = document.querySelector('ul');
 
 $imageInput.addEventListener('input', function (event) {
   $image.setAttribute('src', $imageInput.value);
@@ -25,34 +26,41 @@ function handleSubmit(event) {
   $form.reset();
 }
 
-// function renderEntry(entry) {
-//   var $li = document.createElement('li');
-//   $li.className = 'spacing';
+function renderEntry(entry) {
+  var $li = document.createElement('li');
+  $li.className = 'spacing';
 
-//   var $outerRowDiv = document.createElement('div');
-//   $outerRowDiv.className = 'row';
-//   $li.appendChild($outerRowDiv);
+  var $outerRowDiv = document.createElement('div');
+  $outerRowDiv.className = 'row';
+  $li.appendChild($outerRowDiv);
 
-//   var $imgDiv = document.createElement('div');
-//   $imgDiv.className = 'column-half entry-img';
-//   $outerRowDiv.appendChild($imgDiv);
+  var $imgDiv = document.createElement('div');
+  $imgDiv.className = 'column-half entry-img';
+  $outerRowDiv.appendChild($imgDiv);
 
-//   var $img = document.createElement('img');
-//   $img.setAttribute('src', entry.photoUrl);
-//   $img.setAttribute('alt', entry.title);
-//   $imgDiv.appendChild($img);
+  var $img = document.createElement('img');
+  $img.setAttribute('src', entry.photoUrl);
+  $img.setAttribute('alt', entry.title);
+  $imgDiv.appendChild($img);
 
-//   var $entryInfoDiv = document.createElement('div');
-//   $entryInfoDiv.className = 'column-half entry-info';
-//   $outerRowDiv.appendChild($entryInfoDiv);
+  var $entryInfoDiv = document.createElement('div');
+  $entryInfoDiv.className = 'column-half entry-info';
+  $outerRowDiv.appendChild($entryInfoDiv);
 
-//   var $h2 = document.createElement('h2');
-//   $h2.textContent = entry.title;
-//   $entryInfoDiv.appendChild($h2);
+  var $h2 = document.createElement('h2');
+  $h2.textContent = entry.title;
+  $entryInfoDiv.appendChild($h2);
 
-//   var $p = document.createElement('p');
-//   $p.textContent = entry.notes;
-//   $entryInfoDiv.appendChild($p);
+  var $p = document.createElement('p');
+  $p.textContent = entry.notes;
+  $entryInfoDiv.appendChild($p);
 
-//   return $li;
-// }
+  return $li;
+}
+
+document.addEventListener('DOMContentLoaded', function (event) {
+  for (var index = 0; index < data.entries.length; index++) {
+    var $newEntry = renderEntry(data.entries[index]);
+    $ul.appendChild($newEntry);
+  }
+});
