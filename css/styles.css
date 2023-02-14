@@ -75,13 +75,38 @@ ul {
   margin-top: 20px;
 }
 
+.spacing {
+  margin-bottom: 20px;
+}
+
+.title-space {
+  margin-bottom: -10px;
+}
+
+.entry-info {
+  line-height: 2;
+  margin: 0 auto;
+}
+
+.entry-info > h2 {
+  margin: 0 auto;
+}
+
 @media screen and (min-width: 768px) {
   img {
-    height: auto;
+    height: 400px;
     width: 100%;
   }
 
   .m-top-0 {
     margin-top: -20px;
+  }
+
+  .spacing {
+    margin-bottom: 50px;
+  }
+
+  .entry-info {
+    margin: 0;
   }
 }
