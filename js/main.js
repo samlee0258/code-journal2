@@ -64,3 +64,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
     $ul.appendChild($newEntry);
   }
 });
+
+function toggleNoEntries() {
+  var $noEntriesDiv = document.querySelector('.no-entries');
+  if (data.entries.length > 0) {
+    $noEntriesDiv.className = 'row no-entries hidden';
+  } else {
+    $noEntriesDiv.className = 'row no-entries';
+  }
+}
+toggleNoEntries();
