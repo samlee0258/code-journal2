@@ -45,10 +45,25 @@ ul {
   list-style-type: none;
 }
 
-a {
+.entries-tab {
   text-decoration: none;
   color: white;
   margin: 0 15px;
+}
+
+.entry-form-button {
+  margin-left: auto;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  height: 35px;
+  width: 60px;
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #562b81;
+  color: white;
 }
 
 .flex {
@@ -111,6 +126,15 @@ a {
   img {
     height: 400px;
     width: 100%;
+  }
+
+  h3 {
+    font-size: x-large;
+  }
+
+  .entries-tab {
+    font-size: large;
+    margin: 0 20px;
   }
 
   .m-top-0 {

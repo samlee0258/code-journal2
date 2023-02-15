@@ -94,3 +94,8 @@ var $entriesTab = document.querySelector('#entries-tab');
 $entriesTab.addEventListener('click', function (event) {
   viewSwap('entries');
 });
+
+var $newEntryButton = document.querySelector('#entry-form-button');
+$newEntryButton.addEventListener('click', function (event) {
+  viewSwap('entry-form');
+});

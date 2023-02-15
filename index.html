@@ -25,13 +25,13 @@
       <div class="row">
         <div class="column-full flex">
           <h3>Code Journal</h3>
-          <a href="#" id="entries-tab">Entries</a>
+          <a href="#" id="entries-tab" class="entries-tab">Entries</a>
         </div>
       </div>
     </div>
   </header>
   <main class="container">
-    <div data-view="entry-form" class="">
+    <div data-view="entry-form" class="hidden">
       <form id="entry-form">
         <div class="row">
           <div class="column-full">
@@ -61,10 +61,11 @@
         </div>
       </form>
     </div>
-    <div data-view="entries" class="hidden">
+    <div data-view="entries" class="">
       <div class="row title-space">
-        <div class="column-full">
+        <div class="column-full flex">
           <h1>Entries</h1>
+          <a href="#" id="entry-form-button" class="entry-form-button">NEW</a>
         </div>
       </div>
       <div class="row no-entries">
