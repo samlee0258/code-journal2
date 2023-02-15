@@ -33,6 +33,7 @@ function handleSubmit(event) {
 function renderEntry(entry) {
   var $li = document.createElement('li');
   $li.className = 'spacing';
+  $li.setAttribute('data-entry-id', entry.entryId);
 
   var $outerRowDiv = document.createElement('div');
   $outerRowDiv.className = 'row';
@@ -51,13 +52,25 @@ function renderEntry(entry) {
   $entryInfoDiv.className = 'column-half entry-info';
   $outerRowDiv.appendChild($entryInfoDiv);
 
+  var $titleContainer = document.createElement('div');
+  $titleContainer.className = 'column-half space-between';
+
   var $h2 = document.createElement('h2');
   $h2.textContent = entry.title;
-  $entryInfoDiv.appendChild($h2);
+  $titleContainer.appendChild($h2);
+  $entryInfoDiv.appendChild($titleContainer);
+
+  var $pencil = document.createElement('i');
+  $pencil.className = 'fa-solid fa-pen m-bot';
+  $titleContainer.appendChild($pencil);
+
+  var $pContainer = document.createElement('div');
+  $pContainer.className = 'column-full';
 
   var $p = document.createElement('p');
   $p.textContent = entry.notes;
-  $entryInfoDiv.appendChild($p);
+  $pContainer.appendChild($p);
+  $entryInfoDiv.appendChild($pContainer);
 
   return $li;
 }
