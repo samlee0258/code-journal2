@@ -10,7 +10,7 @@ img {
 }
 
 h1,
-h2 {
+h3 {
   font-family: "Proza Libre", sans-serif;
 }
 
@@ -38,6 +38,37 @@ label {
 input {
   height: 30px;
   width: 100%;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.entries-tab {
+  text-decoration: none;
+  color: white;
+  margin: 0 15px;
+}
+
+.entry-form-button {
+  margin-left: auto;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  height: 35px;
+  width: 60px;
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #562b81;
+  color: white;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
 }
 
 .bg-color {
@@ -70,13 +101,51 @@ input {
   margin-top: 20px;
 }
 
+.spacing {
+  margin-bottom: 20px;
+}
+
+.title-space {
+  margin-bottom: -10px;
+}
+
+.entry-info {
+  line-height: 2;
+  margin: 0 auto;
+}
+
+.entry-info > h2 {
+  margin: 0 auto;
+}
+
+.no-entries {
+  text-align: center;
+}
+
 @media screen and (min-width: 768px) {
   img {
-    height: auto;
+    height: 400px;
     width: 100%;
+  }
+
+  h3 {
+    font-size: x-large;
+  }
+
+  .entries-tab {
+    font-size: large;
+    margin: 0 20px;
   }
 
   .m-top-0 {
     margin-top: -20px;
+  }
+
+  .spacing {
+    margin-bottom: 50px;
+  }
+
+  .entry-info {
+    margin: 0;
   }
 }
