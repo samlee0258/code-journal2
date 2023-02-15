@@ -10,7 +10,7 @@ img {
 }
 
 h1,
-h2 {
+h3 {
   font-family: "Proza Libre", sans-serif;
 }
 
@@ -43,6 +43,17 @@ input {
 ul {
   padding: 0;
   list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  margin: 0 15px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
 }
 
 .bg-color {
