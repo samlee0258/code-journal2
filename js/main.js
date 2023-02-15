@@ -74,3 +74,18 @@ function toggleNoEntries() {
   }
 }
 toggleNoEntries();
+
+// var $showNewEntry = document.querySelector('div[data-view="entry-form"]');
+// var $showEntries = document.querySelector('div[data-view="entries"]');
+
+// function viewSwap(view) {
+//   if (view === 'entry-form') {
+//     data.view = 'entry-form';
+//     $showNewEntry.className = '';
+//     $showEntries.className = 'hidden';
+//   } else if (view === 'entries') {
+//     data.view = 'entries';
+//     $showNewEntry.className = 'hidden';
+//     $showEntries.className = '';
+//   }
+// }
