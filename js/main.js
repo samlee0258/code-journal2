@@ -67,6 +67,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
     var $newEntry = renderEntry(data.entries[index]);
     $ul.appendChild($newEntry);
   }
+  viewSwap('entries');
+  toggleNoEntries();
 });
 
 function toggleNoEntries() {
