@@ -3,6 +3,7 @@ var $imageInput = document.querySelector('#photo-url');
 var $title = document.querySelector('#title');
 var $notes = document.querySelector('#notes');
 var $ul = document.querySelector('ul');
+var $h1 = document.querySelector('h1');
 
 $imageInput.addEventListener('input', function (event) {
   $image.setAttribute('src', $imageInput.value);
@@ -117,4 +118,22 @@ $entriesTab.addEventListener('click', function (event) {
 var $newEntryButton = document.querySelector('#entry-form-button');
 $newEntryButton.addEventListener('click', function (event) {
   viewSwap('entry-form');
+});
+
+$ul.addEventListener('click', function (event) {
+  if (event.target.tagName === 'I') {
+    viewSwap('entry-form');
+    var dataEntryId = Number(event.target.closest('li').getAttribute('data-entry-id'));
+    for (var index = 0; index < data.entries.length; index++) {
+      if (dataEntryId === data.entries[index].entryId) {
+        data.editing = data.entries[index];
+        $title.value = data.editing.title;
+        $imageInput.value = data.editing.photoUrl;
+        $notes.value = data.editing.notes;
+        $image.src = data.editing.photoUrl;
+        $h1.textContent = 'Edit Entry';
+      }
+    }
+
+  }
 });
