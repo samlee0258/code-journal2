@@ -45,6 +45,10 @@ ul {
   list-style-type: none;
 }
 
+i {
+  font-size: x-large;
+}
+
 .entries-tab {
   text-decoration: none;
   color: white;
@@ -122,10 +126,26 @@ ul {
   text-align: center;
 }
 
+.space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  padding-right: 0;
+}
+
+.fa-solid {
+  color: rgb(86, 43, 129);
+}
+
 @media screen and (min-width: 768px) {
   img {
     height: 400px;
     width: 100%;
+  }
+
+  h2 {
+    margin-top: 0;
   }
 
   h3 {
@@ -139,6 +159,10 @@ ul {
 
   .m-top-0 {
     margin-top: -20px;
+  }
+
+  .m-bot {
+    margin-bottom: 10px;
   }
 
   .spacing {
