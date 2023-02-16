@@ -96,9 +96,9 @@ i {
   letter-spacing: 1px;
 }
 
-.jc-end {
+.jc-space {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
 }
 
 .m-top {
@@ -136,6 +136,18 @@ i {
 
 .fa-solid {
   color: rgb(86, 43, 129);
+}
+
+.delete-entry-button {
+  background-color: inherit;
+  border: 1px solid transparent;
+  color: red;
+  text-decoration: underline;
+  padding-left: 0;
+}
+
+.visibility {
+  visibility: hidden;
 }
 
 @media screen and (min-width: 768px) {

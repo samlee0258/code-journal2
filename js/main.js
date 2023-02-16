@@ -4,6 +4,7 @@ var $title = document.querySelector('#title');
 var $notes = document.querySelector('#notes');
 var $ul = document.querySelector('ul');
 var $h1 = document.querySelector('h1');
+var $deleteEntryButton = document.querySelector('.delete-entry-button');
 
 $imageInput.addEventListener('input', function (event) {
   $image.setAttribute('src', $imageInput.value);
@@ -121,6 +122,7 @@ function viewSwap(view) {
     $imageInput.value = '';
     $notes.value = '';
     $image.src = 'images/placeholder-image-square.jpg';
+    $deleteEntryButton.className = 'delete-entry-buton visibility';
   } else if (view === 'entries') {
     data.view = 'entries';
     $showNewEntry.className = 'hidden';
@@ -151,6 +153,7 @@ $ul.addEventListener('click', function (event) {
         $notes.value = data.editing.notes;
         $image.src = data.editing.photoUrl;
         $h1.textContent = 'Edit Entry';
+        $deleteEntryButton.className = 'delete-entry-button';
       }
     }
 
