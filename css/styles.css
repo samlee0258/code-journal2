@@ -122,7 +122,8 @@ i {
   margin: 0 auto;
 }
 
-.no-entries {
+.no-entries,
+.text-center {
   text-align: center;
 }
 
@@ -148,6 +149,53 @@ i {
 
 .visibility {
   visibility: hidden;
+}
+
+.overlay {
+  position: fixed;
+  background-color: rgb(0 0 0 / 50%);
+  inset: 0;
+}
+
+.modal-box {
+  position: fixed;
+  margin: 250px 30px;
+  height: 150px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.cancel {
+  display: flex;
+  align-items: center;
+  width: auto;
+  margin: 20px 0 20px 15px;
+}
+
+.cancel-button {
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: rgb(182, 182, 182);
+  width: auto;
+  height: 30px;
+}
+
+.confirm {
+  align-items: center;
+  width: auto;
+  margin: 20px 15px 20px auto;
+}
+
+.confirm-button {
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+  width: auto;
+  height: 30px;
 }
 
 @media screen and (min-width: 768px) {
@@ -183,5 +231,27 @@ i {
 
   .entry-info {
     margin: 0;
+  }
+
+  .modal-box {
+    position: fixed;
+    margin: 18rem 28rem;
+    height: 150px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+
+  .cancel {
+    display: flex;
+    align-items: center;
+    width: auto;
+    margin: 50px 0 20px 15px;
+  }
+
+  .confirm {
+    align-items: center;
+    width: auto;
+    margin: 50px 15px 20px auto;
   }
 }

@@ -5,6 +5,7 @@ var $notes = document.querySelector('#notes');
 var $ul = document.querySelector('ul');
 var $h1 = document.querySelector('h1');
 var $deleteEntryButton = document.querySelector('.delete-entry-button');
+var $overlay = document.querySelector('.overlay');
 
 $imageInput.addEventListener('input', function (event) {
   $image.setAttribute('src', $imageInput.value);
@@ -39,10 +40,8 @@ function handleSubmit(event) {
       }
     }
   }
-  $image.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
   viewSwap('entries');
-  toggleNoEntries();
 }
 
 function renderEntry(entry) {
@@ -156,6 +155,9 @@ $ul.addEventListener('click', function (event) {
         $deleteEntryButton.className = 'delete-entry-button';
       }
     }
-
   }
+});
+
+$deleteEntryButton.addEventListener('click', function (event) {
+  $overlay.className = 'overlay';
 });
