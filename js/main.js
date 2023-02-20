@@ -7,6 +7,7 @@ var $h1 = document.querySelector('h1');
 var $deleteEntryButton = document.querySelector('.delete-entry-button');
 var $overlay = document.querySelector('.overlay');
 var $cancelButton = document.querySelector('.cancel-button');
+var $confirmButton = document.querySelector('.confirm-button');
 
 $imageInput.addEventListener('input', function (event) {
   $image.setAttribute('src', $imageInput.value);
@@ -165,4 +166,24 @@ $deleteEntryButton.addEventListener('click', function (event) {
 
 $cancelButton.addEventListener('click', function (event) {
   $overlay.className = 'overlay hidden';
+});
+
+$confirmButton.addEventListener('click', function (event) {
+  var $li = document.querySelector('[data-entry-id="' + data.editing.entryId + '"]');
+  var entryObj = {
+    title: $title.value,
+    photoUrl: $imageInput.value,
+    notes: $notes.value
+  };
+  entryObj.entryId = data.editing.entryId;
+
+  for (var index = 0; index < data.entries.length; index++) {
+    if (data.entries[index].entryId === entryObj.entryId) {
+      data.entries.splice(index, 1);
+      $li.remove();
+      toggleNoEntries();
+      $overlay.className = 'overlay hidden';
+      viewSwap('entries');
+    }
+  }
 });
