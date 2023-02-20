@@ -6,6 +6,7 @@ var $ul = document.querySelector('ul');
 var $h1 = document.querySelector('h1');
 var $deleteEntryButton = document.querySelector('.delete-entry-button');
 var $overlay = document.querySelector('.overlay');
+var $cancelButton = document.querySelector('.cancel-button');
 
 $imageInput.addEventListener('input', function (event) {
   $image.setAttribute('src', $imageInput.value);
@@ -160,4 +161,8 @@ $ul.addEventListener('click', function (event) {
 
 $deleteEntryButton.addEventListener('click', function (event) {
   $overlay.className = 'overlay';
+});
+
+$cancelButton.addEventListener('click', function (event) {
+  $overlay.className = 'overlay hidden';
 });
