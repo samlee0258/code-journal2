@@ -32,6 +32,21 @@
   </header>
   <main class="container">
     <div data-view="entry-form" class="hidden">
+      <div class="overlay hidden">
+        <div class="modal-box">
+          <div class="row">
+            <div class="column-full text-center">
+              <p>Are you sure you want to delete this entry?</p>
+            </div>
+            <div class="column-half cancel">
+              <button class="cancel-button">CANCEL</button>
+            </div>
+            <div class="column-half confirm">
+              <button class="confirm-button">CONFIRM</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <form id="entry-form">
         <div class="row">
           <div class="column-full">
@@ -55,7 +70,8 @@
               <textarea name="notes" id="notes" cols="30" rows="10"></textarea>
             </label>
           </div>
-          <div class="column-full jc-end m-top">
+          <div class="column-full jc-space m-top">
+            <button type="button" class="delete-entry-button visibility">Delete Entry</button>
             <button type="submit" class="save-entry-button">SAVE</button>
           </div>
         </div>

@@ -4,6 +4,10 @@ var $title = document.querySelector('#title');
 var $notes = document.querySelector('#notes');
 var $ul = document.querySelector('ul');
 var $h1 = document.querySelector('h1');
+var $deleteEntryButton = document.querySelector('.delete-entry-button');
+var $overlay = document.querySelector('.overlay');
+var $cancelButton = document.querySelector('.cancel-button');
+var $confirmButton = document.querySelector('.confirm-button');
 
 $imageInput.addEventListener('input', function (event) {
   $image.setAttribute('src', $imageInput.value);
@@ -38,10 +42,8 @@ function handleSubmit(event) {
       }
     }
   }
-  $image.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
   viewSwap('entries');
-  toggleNoEntries();
 }
 
 function renderEntry(entry) {
@@ -121,6 +123,7 @@ function viewSwap(view) {
     $imageInput.value = '';
     $notes.value = '';
     $image.src = 'images/placeholder-image-square.jpg';
+    $deleteEntryButton.className = 'delete-entry-buton visibility';
   } else if (view === 'entries') {
     data.view = 'entries';
     $showNewEntry.className = 'hidden';
@@ -151,8 +154,36 @@ $ul.addEventListener('click', function (event) {
         $notes.value = data.editing.notes;
         $image.src = data.editing.photoUrl;
         $h1.textContent = 'Edit Entry';
+        $deleteEntryButton.className = 'delete-entry-button';
       }
     }
+  }
+});
 
+$deleteEntryButton.addEventListener('click', function (event) {
+  $overlay.className = 'overlay';
+});
+
+$cancelButton.addEventListener('click', function (event) {
+  $overlay.className = 'overlay hidden';
+});
+
+$confirmButton.addEventListener('click', function (event) {
+  var $li = document.querySelector('[data-entry-id="' + data.editing.entryId + '"]');
+  var entryObj = {
+    title: $title.value,
+    photoUrl: $imageInput.value,
+    notes: $notes.value
+  };
+  entryObj.entryId = data.editing.entryId;
+
+  for (var index = 0; index < data.entries.length; index++) {
+    if (data.entries[index].entryId === entryObj.entryId) {
+      data.entries.splice(index, 1);
+      $li.remove();
+      toggleNoEntries();
+      $overlay.className = 'overlay hidden';
+      viewSwap('entries');
+    }
   }
 });
